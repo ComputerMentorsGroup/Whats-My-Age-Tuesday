@@ -8,14 +8,16 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="org.computermentors.whatsmyage.MainActivity">
+    tools:context="org.computermentors.whatsmyage.MainActivity"
+    android:background="#4e5698">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="What day were you born?"
         android:id="@+id/infoTextView"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:textColor="#80ffffff" />
 
     <Button
         android:layout_width="match_parent"
@@ -23,7 +25,8 @@
         android:text="Whats my age?"
         android:id="@+id/findAgeButton"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:textColor="#4e5698" />
 
     <DatePicker
         android:layout_width="match_parent"
