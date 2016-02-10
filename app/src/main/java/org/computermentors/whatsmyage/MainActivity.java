@@ -7,7 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Calculate mCalculate = new Calculate();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                DatePicker date = birthDatePicker;
+                Date date = mCalculate.getDate(birthDatePicker);
 
 
                 startAgeActivity();
