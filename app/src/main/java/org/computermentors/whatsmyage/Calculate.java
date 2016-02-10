@@ -10,7 +10,7 @@ import java.util.Date;
 public class Calculate {
 
     Date getDate (DatePicker date){
-        
+
     }
 
     int getAge (Date date){

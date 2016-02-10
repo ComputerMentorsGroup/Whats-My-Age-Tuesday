@@ -7,7 +7,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Calculate mCalculate = new Calculate();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +24,17 @@ public class MainActivity extends AppCompatActivity {
         findAgeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startAgeActivity();
+
+                Date date = mCalculate.getDate(birthDatePicker);
+
+                int year = mCalculate.getAge(date);
+                
+                startAgeActivity(year);
             }
         });
     }
 
-    private void startAgeActivity(){
+    private void startAgeActivity(int year){
         Intent intent = new Intent(this, AgeActivity.class);
         startActivity(intent);
     }
