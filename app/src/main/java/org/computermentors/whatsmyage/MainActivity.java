@@ -9,6 +9,8 @@ import android.widget.DatePicker;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Calculate mCalculate = new Caclulate();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
