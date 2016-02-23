@@ -1,12 +1,11 @@
 package org.computermentors.whatsmyage.UI;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.Toast;
 
 import org.computermentors.whatsmyage.BackEnd.Calculate;
 import org.computermentors.whatsmyage.R;
@@ -30,21 +29,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 //... first it converts the DatePicker into a Date variable...
                 Date date = mCalculate.getDate(birthDatePicker);
 
                 //... then it Calculates the age to an int in years...
                 int year = mCalculate.getAge(date);
 
+                startAgeActivity(year);
 
-                //... then it starts the AgeActivity...
-                startAgeActivity();
             }
         });
     }
 
-    private void startAgeActivity(){
+    private void startAgeActivity(int age) {
         Intent intent = new Intent(this, AgeActivity.class);
+        intent.putExtra("age",age);
         startActivity(intent);
     }
 }
