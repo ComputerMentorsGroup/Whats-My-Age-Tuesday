@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 import org.computermentors.whatsmyage.BackEnd.Calculate;
 import org.computermentors.whatsmyage.R;
@@ -35,13 +36,14 @@ public class MainActivity extends AppCompatActivity {
                 //... then it Calculates the age to an int in years...
                 int year = mCalculate.getAge(date);
 
+
                 //... then it starts the AgeActivity...
-                startAgeActivity(year);
+                startAgeActivity();
             }
         });
     }
 
-    private void startAgeActivity(int year){
+    private void startAgeActivity(){
         Intent intent = new Intent(this, AgeActivity.class);
         startActivity(intent);
     }
