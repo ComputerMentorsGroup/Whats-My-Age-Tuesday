@@ -6,11 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-<<<<<<< HEAD:app/src/main/java/org/computermentors/whatsmyage/AgeActivity.java
-=======
 
 import org.computermentors.whatsmyage.R;
->>>>>>> master:app/src/main/java/org/computermentors/whatsmyage/UI/AgeActivity.java
 
 public class AgeActivity extends AppCompatActivity {
 
@@ -19,14 +16,14 @@ public class AgeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_age);
 
-<<<<<<< HEAD:app/src/main/java/org/computermentors/whatsmyage/AgeActivity.java
-        final TextView birthDatePicker = (TextView) findViewById(R.id.ageTextView);
-=======
+        Intent intent = getIntent();
+        int age = intent.getIntExtra("age", 0);
+
+
         final TextView ageTextView = (TextView) findViewById(R.id.ageTextView);
->>>>>>> master:app/src/main/java/org/computermentors/whatsmyage/UI/AgeActivity.java
         final Button backButton = (Button) findViewById(R.id.backButton);
 
-        ageTextView.setText("Hello!");
+        ageTextView.setText("" + age);
 
         // Returns to the MainActivity
         backButton.setOnClickListener(new View.OnClickListener() {
