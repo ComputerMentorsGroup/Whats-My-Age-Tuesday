@@ -1,5 +1,7 @@
 package org.computermentors.whatsmyage.UI;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,20 @@ public class AgeActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         int age = intent.getIntExtra("age", 0);
+
+        if(age < 0){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("oops!");
+            builder.setMessage("There was an error, Sorry for the inconvienence");
+            builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    startMain();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
 
 
         final TextView ageTextView = (TextView) findViewById(R.id.ageTextView);
